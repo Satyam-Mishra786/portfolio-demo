@@ -1,0 +1,103 @@
+@import "../../global.scss";
+
+.contact {
+    background-color: white;
+    display: flex;
+
+    @include mobile {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .left {
+        flex: 1;
+
+        @include mobile {
+            flex: 0.35;
+        }
+
+        .imgContainer {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        @include mobile {
+            flex: 0.65;
+        }
+
+        h2 {
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            &>* {
+                margin-bottom: 20px;
+                outline: none;
+
+                @include mobile {
+                    margin-bottom: 10px;
+                }
+            }
+
+            input {
+                width: 220px;
+                height: 10px;
+                padding: 10px 5px;
+                border: 2px solid rgb(46, 45, 45);
+            }
+
+            textarea {
+                width: 220px;
+                padding: 5px;
+                height: 200px;
+                resize: none;
+                border: 2px solid rgb(46, 45, 45);
+
+                @include mobile {
+                    height: 150px;
+                }
+
+            }
+
+            button {
+                width: 140px;
+                border-radius: 10px;
+                padding: 5px;
+                background-color: rgb(238, 59, 95);
+                border: 1px solid grey;
+                color: white;
+                cursor: pointer;
+            }
+
+            .greetings {
+                color: green;
+                font-size: 20px;
+
+                @include mobile {
+                    font-size: 15px;
+                }
+            }
+
+        }
+    }
+}

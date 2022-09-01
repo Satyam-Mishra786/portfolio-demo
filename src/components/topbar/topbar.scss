@@ -1,0 +1,93 @@
+@import "../../global.scss";
+
+.topbar {
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    color: $mainColor;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    transition: all 2s ease;
+
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 30px;
+
+        .left {
+            display: flex;
+            align-items: center;
+
+            .logo {
+                font-size: 30px;
+                text-decoration: none;
+                color: $mainColor;
+            }
+
+            .itemContainer {
+                display: flex;
+                align-items: center;
+                margin: 0 40px;
+
+                @include mobile {
+                    display: none;
+                }
+
+                span {
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .right {
+            .hamburger {
+                cursor: pointer;
+                width: 32px;
+                height: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                overflow: hidden;
+
+                span {
+                    width: 100%;
+                    height: 3px;
+                    background-color: $mainColor;
+                    transform-origin: left;
+                    transition: all 2s ease;
+                }
+            }
+
+        }
+    }
+
+    &.active {
+        background-color: $mainColor;
+        color: white;
+
+        .logo {
+            color: white !important;
+        }
+
+        .hamburger {
+            span {
+                &:first-child {
+                    background-color: white;
+                    transform: rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:last-child {
+                    background-color: white;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
